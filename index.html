@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#000000">
+  <title>Blind Signal — Navigation Prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game" aria-label="Blind Signal game">
+    <canvas id="view"></canvas>
+
+    <section id="hud" aria-live="polite">
+      <div class="hud-row">
+        <span id="distanceReadout">SIGNAL: --</span>
+        <span id="facingReadout">N</span>
+      </div>
+      <p id="message">FIND THE TOWER</p>
+    </section>
+
+    <div id="scopeShade" aria-hidden="true"></div>
+    <div id="signalLine" aria-hidden="true"></div>
+    <div id="reticle" aria-hidden="true"><i></i><b></b></div>
+
+    <section id="controls" aria-label="Movement controls">
+      <button id="turnLeft" aria-label="Turn left">↶</button>
+      <button id="moveForward" aria-label="Move forward">▲</button>
+      <button id="turnRight" aria-label="Turn right">↷</button>
+      <button id="turnBack" aria-label="Turn around">▼</button>
+    </section>
+
+    <section id="startScreen" class="overlay">
+      <div class="panel">
+        <h1>BLIND SIGNAL</h1>
+        <p>Everything is dark. Find the tower.</p>
+        <p class="small">Swipe up to move. Swipe left or right to turn. Swipe down to turn around.</p>
+        <button id="startButton">ENTER</button>
+      </div>
+    </section>
+
+    <section id="winScreen" class="overlay hidden">
+      <div class="panel">
+        <h2>SIGNAL FOUND</h2>
+        <p id="stepResult"></p>
+        <button id="nextButton">NEW SIGNAL</button>
+      </div>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
